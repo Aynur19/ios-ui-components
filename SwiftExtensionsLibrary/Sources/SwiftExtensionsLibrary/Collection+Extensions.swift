@@ -1,6 +1,6 @@
 //
 //  Collection+Extensions.swift
-//  UIComponents
+//  SwiftExtensions
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //
@@ -14,7 +14,7 @@ extension Collection {
 }
 
 extension Collection where Element: SignedNumeric & Comparable {
-    func closest(to value: Element) -> Element? {
+    public func closest(to value: Element) -> Element? {
         self.min(by: { abs($0 - value) < abs($1 - value) })
     }
 }

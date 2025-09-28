@@ -1,6 +1,6 @@
 //
-//  FlexibleSheetDemo.swift
-//  UIComponents
+//  SUIFlexibleSheetDemo.swift
+//  UIComponentsLibrary
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //
@@ -9,10 +9,10 @@
 import SwiftUI
 
 
-struct FlexibleSheetDemo_Previews: PreviewProvider {
+struct SUIFlexibleSheetDemo_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            DemoFlexibleBottomSheetHostView()
+            SUIDemoFlexibleBottomSheetHostView()
                 .ignoresSafeArea()
         }
 //
@@ -20,8 +20,8 @@ struct FlexibleSheetDemo_Previews: PreviewProvider {
     }
 }
 
-struct DemoFlexibleBottomSheetHostView: View {
-    @StateObject private var vm = FlexibleSheetViewModelImpl.createBottomSheetViewModel(
+struct SUIDemoFlexibleBottomSheetHostView: View {
+    @StateObject private var vm = SUIFlexibleSheetViewModelImpl.createBottomSheetViewModel(
         cornerRadius: 50,
         sheetMinOffset: 100
     )
@@ -37,7 +37,7 @@ struct DemoFlexibleBottomSheetHostView: View {
                 Spacer()
             }
             
-            FlexibleSheetView(
+            SUIFlexibleSheetView(
                 viewModel: vm,
                 content: { sheetcontent }
             )
@@ -58,14 +58,14 @@ struct DemoFlexibleBottomSheetHostView: View {
     }
 }
 
-struct DemoFlexibleTopSheetHostView: View {
-    @StateObject private var vm = FlexibleSheetViewModelImpl.createTopSheetViewModel(
+struct SUIDemoFlexibleTopSheetHostView: View {
+    @StateObject private var vm = SUIFlexibleSheetViewModelImpl.createTopSheetViewModel(
         cornerRadius: 50,
         sheetMinOffset: 100
     )
 
     var body: some View {
-        FlexibleSheetView(viewModel: vm) {
+        SUIFlexibleSheetView(viewModel: vm) {
             VStack {
                 Spacer()
                 Text("Hello Sheet")
@@ -75,14 +75,14 @@ struct DemoFlexibleTopSheetHostView: View {
     }
 }
 
-struct DemoFlexibleRightSheetHostView: View {
-    @StateObject private var vm = FlexibleSheetViewModelImpl.createRightSheetViewModel(
+struct SUIDemoFlexibleRightSheetHostView: View {
+    @StateObject private var vm = SUIFlexibleSheetViewModelImpl.createRightSheetViewModel(
         cornerRadius: 50,
         sheetMinOffset: 100
     )
 
     var body: some View {
-        FlexibleSheetView(viewModel: vm) {
+        SUIFlexibleSheetView(viewModel: vm) {
             VStack {
                 Spacer()
                 Text("Hello Sheet")
@@ -92,14 +92,14 @@ struct DemoFlexibleRightSheetHostView: View {
     }
 }
 
-struct DemoFlexibleLeftSheetHostView: View {
-    @StateObject private var vm = FlexibleSheetViewModelImpl.createLeftSheetViewModel(
+struct SUIDemoFlexibleLeftSheetHostView: View {
+    @StateObject private var vm = SUIFlexibleSheetViewModelImpl.createLeftSheetViewModel(
         cornerRadius: 50,
         sheetMinOffset: 100
     )
 
     var body: some View {
-        FlexibleSheetView(viewModel: vm) {
+        SUIFlexibleSheetView(viewModel: vm) {
             VStack {
                 Spacer()
                 Text("Hello Sheet")

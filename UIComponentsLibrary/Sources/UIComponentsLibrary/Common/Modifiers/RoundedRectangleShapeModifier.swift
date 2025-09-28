@@ -1,11 +1,10 @@
 //
 //  RoundedRectangleShapeModifier.swift
-//  UIComponents
+//  UIComponentsLibrary
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //
 
-#if os(iOS)
 import SwiftUI
 
 public struct RoundedRectangleShapeModifier: ViewModifier {
@@ -55,4 +54,3 @@ extension View {
         )
     }
 }
-#endif

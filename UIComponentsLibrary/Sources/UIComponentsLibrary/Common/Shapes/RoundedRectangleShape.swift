@@ -1,6 +1,6 @@
 //
-//  RoundedRectangleShape.swift
-//  UIComponents
+//  File.swift
+//  UIComponentsLibrary
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //
@@ -8,23 +8,16 @@
 import SwiftUI
 
 public struct RoundedRectangleShape: Shape {
-    private let topLeft: CGFloat?
-    private let topRight: CGFloat?
-    private let bottomLeft: CGFloat?
-    private let bottomRight: CGFloat?
+    let topLeft: CGFloat?
+    let topRight: CGFloat?
+    let bottomLeft: CGFloat?
+    let bottomRight: CGFloat?
     
     public init(cornerRadius: CGFloat? = nil) {
         self.topLeft = cornerRadius
         self.topRight = cornerRadius
         self.bottomLeft = cornerRadius
         self.bottomRight = cornerRadius
-    }
-    
-    public init(corners: SheetRoundedCorners) {
-        self.topLeft = corners.topLeftRadius
-        self.topRight = corners.topRightRadius
-        self.bottomLeft = corners.bottomLeftRadius
-        self.bottomRight = corners.bottomRightRadius
     }
     
     public init(

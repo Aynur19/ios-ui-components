@@ -1,41 +1,16 @@
 //
-//  FlexibleSheetView.swift
-//  UIComponents
+//  SUIFlexibleSheetView.swift
+//  UIComponentsLibrary
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //
 
 import SwiftUI
 
-struct SheetOffsetModifier: Animatable {
-    var offset: CGFloat
-    var isVertical: Bool
-
-    // AnimatableData отвечает за плавную анимацию
-    var animatableData: CGFloat {
-        get { offset }
-        set { offset = newValue }
-    }
-
-//    func body(content: Content) -> some View {
-//        content.offset(
-//            x: isVertical ? 0 : offset,
-//            y: isVertical ? offset : 0
-//        )
-//    }
-}
-
-public struct FlexibleSheetView<Content: View, ViewModel: FlexibleSheetViewModel>: View {
+public struct SUIFlexibleSheetView<Content: View, ViewModel: SUIFlexibleSheetViewModel>: View {
     @State private var offset: CGFloat = 0
     @State private var baseOffset: CGFloat = 0
     @State private var isDragging: Bool = false
-    
-//    private var animatableOffset: CGFloat
-
-//    public var animatableData: CGFloat {
-//        get { animatableOffset }
-//        set { animatableOffset = newValue }
-//    }
     
     @ObservedObject private var viewModel: ViewModel
     private let content: () -> Content
@@ -138,15 +113,8 @@ public struct FlexibleSheetView<Content: View, ViewModel: FlexibleSheetViewModel
     }
     
     private func didUpdateSheetExapndState(_ state: SheetExpandState) {
-//        if isDragging {
-            offset = viewModel.getSheetOffset(expandState: state)
-            baseOffset = offset
-//        } else {
-//            withAnimation(viewModel.sheetExpandAnimation) {
-//                offset = viewModel.getSheetOffset(expandState: state)
-//            }
-//            baseOffset = offset
-//        }
+        offset = viewModel.getSheetOffset(expandState: state)
+        baseOffset = offset
     }
     
     private func onEndedDragGesture(value: DragGesture.Value) {
@@ -155,3 +123,4 @@ public struct FlexibleSheetView<Content: View, ViewModel: FlexibleSheetViewModel
         viewModel.updateExpandState(predictedOffset: predictedOffset)
     }
 }
+

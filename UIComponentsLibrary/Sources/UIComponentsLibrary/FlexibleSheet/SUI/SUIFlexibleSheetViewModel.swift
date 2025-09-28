@@ -1,14 +1,15 @@
 //
-//  File.swift
-//  UIComponents
+//  SUIFlexibleSheetViewModel.swift
+//  UIComponentsLibrary
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //
 
 import SwiftUI
 import Combine
+import SwiftExtensions
 
-public protocol FlexibleSheetViewModel: ObservableObject, AnyObject {
+public protocol SUIFlexibleSheetViewModel: ObservableObject, AnyObject {
     var containerSize: CGSize { get }
     var sheetExpandStatePublisher: AnyPublisher<SheetExpandState, Never> { get }
         
@@ -66,7 +67,7 @@ public protocol FlexibleSheetViewModel: ObservableObject, AnyObject {
     static func createLeftSheetViewModel(cornerRadius: CGFloat, sheetMinOffset: CGFloat) -> Self
 }
 
-extension FlexibleSheetViewModel {
+extension SUIFlexibleSheetViewModel {
     public init(
         sheetAnchor: SheetAnchor,
         sheetRoundedCorners: SheetRoundedCorners,
@@ -128,7 +129,7 @@ extension FlexibleSheetViewModel {
     }
 }
 
-public final class FlexibleSheetViewModelImpl: FlexibleSheetViewModel {
+public final class SUIFlexibleSheetViewModelImpl: SUIFlexibleSheetViewModel {
     @Published public private(set) var containerSize: CGSize = .zero
     @Published private var sheetExpandState: SheetExpandState
     
@@ -259,3 +260,4 @@ public final class FlexibleSheetViewModelImpl: FlexibleSheetViewModel {
         min(maxOffset, max(minOffset, offset))
     }
 }
+

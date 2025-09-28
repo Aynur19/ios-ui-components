@@ -1,6 +1,6 @@
 //
 //  View+If.swift
-//  UIComponents
+//  UIComponentsLibrary
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //

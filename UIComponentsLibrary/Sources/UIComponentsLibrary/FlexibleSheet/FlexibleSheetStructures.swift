@@ -1,6 +1,6 @@
 //
 //  FlexibleSheetStructures.swift
-//  UIComponents
+//  UIComponentsLibrary
 //
 //  Created by Насыбуллин Айнур Анасович on 28.09.2025.
 //
@@ -43,5 +43,14 @@ public struct SheetRoundedCorners {
         self.topRightRadius = topRightRadius
         self.bottomLeftRadius = bottomLeftRadius
         self.bottomRightRadius = bottomRightRadius
+    }
+}
+
+extension RoundedRectangleShape {
+    public init(corners: SheetRoundedCorners) {
+        self.topLeft = corners.topLeftRadius
+        self.topRight = corners.topRightRadius
+        self.bottomLeft = corners.bottomLeftRadius
+        self.bottomRight = corners.bottomRightRadius
     }
 }
